@@ -7,9 +7,14 @@ define('DB_PASSWORD', 'wqmsreal');
 define('DB_NAME', 'register');
  
 /* Attempt to connect to MySQL database */
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+try {
+    $conn = @mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+} catch (Exception $e) {
+    $conn = null;
+}
  
 // Check connection
-if ($conn === false) {
-    die("ERROR: Could not connect. " . mysqli_connect_error());
+if ($conn === false || $conn === null) {
+    // Optionally log or handle gracefully without throwing a 500 error for all pages
+    $conn = null;
 }
