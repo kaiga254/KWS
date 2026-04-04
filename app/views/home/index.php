@@ -78,7 +78,8 @@
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
                 <div class="h-48 bg-blue-100 relative">
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <img src="/KidsWithSolutions-master/public/img/programs/basic_computer_skills.jpeg" alt="Basic Computer Skills" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <svg class="hidden w-16 h-16 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
                 </div>
                 <div class="p-8">
@@ -93,7 +94,8 @@
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
                 <div class="h-48 bg-purple-100 relative">
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <img src="/KidsWithSolutions-master/public/img/programs/coding_for_kids.jpeg" alt="Coding for Kids" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <svg class="hidden w-16 h-16 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
                 </div>
                 <div class="p-8">
@@ -108,7 +110,9 @@
             <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
                 <div class="h-48 bg-green-100 relative">
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        <img src="/KidsWithSolutions-master/public/img/programs/digital_literacy.jpeg" alt="Digital Literacy and Safety" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <svg class="hidden w-16 h-16 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+
                     </div>
                 </div>
                 <div class="p-8">
@@ -123,39 +127,85 @@
 </section>
 
 <!-- Impact Section -->
-<section class="py-20 bg-brand-dark text-white relative">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+<section class="py-20 bg-brand-green text-white relative" id="impact-section">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact So Far</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">Tangible results from our community-driven initiatives.</p>
+            <p class="text-white opacity-90 max-w-2xl mx-auto">Tangible results from our community-driven initiatives.</p>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-brand-green mb-2">500+</div>
-                <div class="text-gray-300 font-medium">Students Trained</div>
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="500">0</div>
+                <div class="text-white opacity-90 font-medium">Students Trained</div>
             </div>
             <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-brand-blue mb-2">25</div>
-                <div class="text-gray-300 font-medium">Bootcamps Held</div>
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="25">0</div>
+                <div class="text-white opacity-90 font-medium">Bootcamps Held</div>
             </div>
             <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-brand-purple mb-2">15</div>
-                <div class="text-gray-300 font-medium">Partner Schools</div>
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="15">0</div>
+                <div class="text-white opacity-90 font-medium">Partner Schools</div>
             </div>
             <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-white mb-2">100%</div>
-                <div class="text-gray-300 font-medium">Dedication</div>
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="100" data-suffix="%">0</div>
+                <div class="text-white opacity-90 font-medium">Dedication</div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const options = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        const suffix = entry.target.getAttribute('data-suffix') || '';
+                        const duration = 2000; // 2 seconds
+                        const start = Date.now();
+
+                        const animate = () => {
+                            const now = Date.now();
+                            const progress = Math.min((now - start) / duration, 1);
+                            const value = Math.floor(progress * target);
+                            entry.target.textContent = value + suffix;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                entry.target.textContent = target + '+' + suffix;
+                            }
+                        };
+
+                        animate();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // Start animation when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', animateCounters);
+        } else {
+            animateCounters();
+        }
+    </script>
 </section>
 
 <!-- Testimonials -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-16">What They Say</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-16">Testimonials</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-gray-50 p-8 rounded-2xl">
@@ -167,7 +217,7 @@
             </div>
             <div class="bg-gray-50 p-8 rounded-2xl">
                 <div class="flex items-center gap-1 text-yellow-400 mb-4">
-                    ★★★★★
+                    ★★★★
                 </div>
                 <p class="text-gray-600 mb-6 italic">"I learned how to type properly and understand the internet. It was fun and the teachers were very nice."</p>
                 <div class="font-bold text-brand-dark">- Michael, 12 yrs</div>
@@ -178,6 +228,31 @@
                 </div>
                 <p class="text-gray-600 mb-6 italic">"This foundation is providing crucial skills that traditional schools around here often miss. Highly recommend supporting them."</p>
                 <div class="font-bold text-brand-dark">- Mr. David, Teacher</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Our Partners</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">We collaborate with organizations that share our commitment to empowering young digital learners.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
+            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
+                <img src="/KidsWithSolutions-master/public/img/ACWICT.jpg" alt="ACWICT logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </div>
+            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
+                <img src="/KidsWithSolutions-master/public/img/usiu.png" alt="USIU logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </div>
+            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
+                <img src="/KidsWithSolutions-master/public/img/ACWICT_1.jpg" alt="ACWICT partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+            </div>
+            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
+                <img src="/KidsWithSolutions-master/public/img/usiu_1.png" alt="USIU partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </div>

@@ -1,5 +1,10 @@
 <!-- Page Header -->
 <section class="bg-brand-dark text-white py-16 md:py-24 relative overflow-hidden">
+     <img src="/KidsWithSolutions-master/public/img/hero/register.jpeg" alt="Register" class="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-35">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue/70 via-brand-blue/65 to-brand-dark/10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_55%)]"></div>
+    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Register a Child</h1>
         <p class="text-xl text-gray-300 max-w-3xl mx-auto">

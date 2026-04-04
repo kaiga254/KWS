@@ -1,12 +1,14 @@
 <!-- Page Header -->
 <section class="bg-brand-dark text-white py-16 md:py-24 relative overflow-hidden">
-    <!-- Decorative background elements -->
-    <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-brand-purple opacity-20 blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brand-green opacity-20 blur-3xl"></div>
+    <!-- Background image and overlays for stronger contrast and depth -->
+    <img src="/KidsWithSolutions-master/public/img/hero/programs.jpeg" alt="Our Programs Image" class="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-55">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue/70 via-brand-blue/65 to-brand-dark/10"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]"></div>
+    
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Bootcamps</h1>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
             Structured, impact-driven programs designed to equip the youth with foundational to advanced digital skills. Choose a path that fits your child's age group and interests.
         </p>
     </div>
@@ -28,9 +30,10 @@
             
             <!-- Program 1 (Detailed Card) -->
             <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col md:flex-row hover:shadow-xl transition-shadow">
-                <div class="md:w-1/3 bg-blue-100 relative min-h-[250px] flex items-center justify-center p-8">
-                    <svg class="w-24 h-24 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-blue shadow-sm">Beginner</div>
+                <div class="md:w-1/3 bg-blue-100 relative min-h-[250px]">
+                   <img src="/KidsWithSolutions-master/public/img/programs/basic_computer_skills.jpeg" alt="Basic Computer Skills" class="absolute inset-0 w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <svg class="hidden absolute inset-0 w-full h-full flex items-center justify-center text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-blue shadow-sm z-10">Beginner</div>
                 </div>
                 <div class="p-8 md:w-2/3 flex flex-col justify-center">
                     <div class="flex flex-wrap justify-between items-start mb-4">
@@ -51,9 +54,10 @@
 
             <!-- Program 2 -->
             <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col md:flex-row hover:shadow-xl transition-shadow">
-                <div class="md:w-1/3 bg-purple-100 relative min-h-[250px] flex items-center justify-center p-8">
-                    <svg class="w-24 h-24 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-purple shadow-sm">Intermediate</div>
+                <div class="md:w-1/3 bg-purple-100 relative min-h-[250px]">
+                           <img src="/KidsWithSolutions-master/public/img/programs/coding_for_kids.jpeg" alt="Coding for Kids" class="absolute inset-0 w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                        <svg class="hidden absolute inset-0 w-full h-full flex items-center justify-center text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-purple shadow-sm z-10">Intermediate</div>
                 </div>
                 <div class="p-8 md:w-2/3 flex flex-col justify-center">
                     <div class="flex flex-wrap justify-between items-start mb-4">
@@ -74,9 +78,10 @@
 
             <!-- Program 3 -->
             <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 flex flex-col md:flex-row hover:shadow-xl transition-shadow">
-                <div class="md:w-1/3 bg-green-100 relative min-h-[250px] flex items-center justify-center p-8">
-                    <svg class="w-24 h-24 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-green shadow-sm">All Levels</div>
+                <div class="md:w-1/3 bg-green-100 relative min-h-[250px]">
+                    <img src="/KidsWithSolutions-master/public/img/programs/digital_literacy.jpeg" alt="Digital Literacy & Safety" class="absolute inset-0 w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                    <svg class="hidden absolute inset-0 w-full h-full flex items-center justify-center text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    <div class="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-brand-green shadow-sm z-10">All Levels</div>
                 </div>
                 <div class="p-8 md:w-2/3 flex flex-col justify-center">
                     <div class="flex flex-wrap justify-between items-start mb-4">
