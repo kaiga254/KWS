@@ -243,16 +243,16 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
             <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/ACWICT.jpg" alt="ACWICT logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="/KidsWithSolutions-master/public/img/logos/ACWICT.jpg" alt="ACWICT logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/usiu.png" alt="USIU logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="/KidsWithSolutions-master/public/img/logos/usiu.png" alt="USIU logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/ACWICT_1.jpg" alt="ACWICT partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="/KidsWithSolutions-master/public/img/logos/ACWICT_1.jpg" alt="ACWICT partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
             <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/usiu_1.png" alt="USIU partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="/KidsWithSolutions-master/public/img/logos/usiu_1.png" alt="USIU partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </div>
         </div>
     </div>

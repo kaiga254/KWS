@@ -36,7 +36,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/public/register" method="POST" id="registration-form" class="space-y-10">
+                <form action="/KidsWithSolutions-master/public/register" method="POST" id="registration-form" class="space-y-10">
                     
                     <!-- Parent Details -->
                     <div>

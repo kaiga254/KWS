@@ -16,10 +16,10 @@
                 <h2 class="text-sm font-bold tracking-wide text-brand-green uppercase mb-2">Our Story</h2>
                 <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Empowering Communities Through Technology</h3>
                 <p class="text-lg text-gray-600 mb-6">
-                    Kids With Solution Foundation was born out of a simple observation: the digital divide is fundamentally an opportunity gap. As the world moves rapidly towards a technology-dependent future, children without basic digital literacy are at a severe disadvantage.
+                    Kids with Solutions Foundation, Ltd (KWSF) was founded in 2018 with a transformation goal to help save the lives of millions of children in  the developing world by providing them with digital literacy skills hence dramatically scaling up their confidence and self-esteem in the digital space. 
                 </p>
                 <p class="text-lg text-gray-600">
-                    We started by organizing small weekend workshops and have grown into structured bootcamps across multiple communities. Our goal is to ensure that every child, regardless of background, has the fundamental tools to succeed, innovate, and thrive.
+                    Since then, KWSF has pursued several ambitious goals from helping to rapidly accelerate the roll out of digital literary skills to strengthen the Information Technology workforce in low income countries. 
                 </p>
             </div>
             <div class="relative">
@@ -46,7 +46,7 @@
                     Our Mission
                 </h3>
                 <p class="text-gray-600 text-lg leading-relaxed">
-                    To bridge the digital divide by providing accessible, high-quality digital education to children and teenagers, inspiring them to become problem solvers and innovators in their communities.
+                    To offer a variety of digital literary skills to children with the ability to unlock their confidence and self-esteem.
                 </p>
             </div>
             
@@ -56,7 +56,7 @@
                     Our Vision
                 </h3>
                 <p class="text-gray-600 text-lg leading-relaxed">
-                    A future where digital literacy is a universal right, not a privilege, and where every young person has the technological foundation to shape the future.
+                    To be aleading Information Technology in the world achieving exceptional career and satisfaction through creativity,integrity and professionalism. 
                 </p>
             </div>
         </div>
