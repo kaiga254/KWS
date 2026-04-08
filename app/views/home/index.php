@@ -251,15 +251,15 @@ $faqs = [
 </section>
 
 <!-- CTA Banner -->
-<section class="py-20 bg-gradient-to-r from-brand-green to-brand-blue text-white text-center">
+<section class="py-20 bg-brand-green text-white text-center">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-5xl font-bold mb-6">Join Us in Making a Difference</h2>
         <p class="text-xl mb-10 opacity-90">Whether you are registering a student or donating to support our cause, every action counts.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="/KidsWithSolutions-master/public/register" class="bg-white text-brand-dark font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+            <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center bg-white text-brand-ink font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
                 Register For Bootcamp
             </a>
-            <a href="/KidsWithSolutions-master/public/donate" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-dark font-bold py-4 px-10 rounded-full transition-all">
+            <a href="<?php echo $baseUrl; ?>/donate" class="inline-flex items-center justify-center bg-brand-ink border-2 border-brand-ink text-white hover:bg-slate-900 hover:border-slate-900 font-bold py-4 px-10 rounded-full shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
                 Make a Donation
             </a>
         </div>
