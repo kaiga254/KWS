@@ -2,9 +2,11 @@
 class Register extends Controller {
     public function index() {
         $message = '';
+        $old = [];
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             require_once '../config.php';
+            $old = $_POST;
 
             $validation = $this->validateRegistration($_POST);
             if ($validation !== true) {
@@ -35,7 +37,7 @@ class Register extends Controller {
             }
         }
         
-        $this->view('layout/main', ['view' => 'register/index', 'message' => $message]);
+        $this->view('layout/main', ['view' => 'register/index', 'message' => $message, 'old' => $old]);
     }
 
     private function validateRegistration($post) {
@@ -48,6 +50,11 @@ class Register extends Controller {
 
         if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
             return 'Please provide a valid email address.';
+        }
+
+        $childAge = filter_var($post['child_age'], FILTER_VALIDATE_INT);
+        if ($childAge === false || $childAge < 6 || $childAge > 17) {
+            return 'Please enter a child age between 6 and 17.';
         }
 
         return true;

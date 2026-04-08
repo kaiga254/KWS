@@ -1,101 +1,113 @@
-<!-- Page Header -->
-<section class="bg-brand-dark text-white py-20 md:py-28 relative overflow-hidden">
-    <img src="/KidsWithSolutions-master/public/img/hero/contact_us.jpeg" alt="Contact Us" class="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-55">
-    <div class="absolute inset-0 bg-gradient-to-b from-blue/70 via-brand-blue/65 to-brand-dark/10"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_55%)]"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Contact Us</h1>
-        <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Have questions about our programs, want to volunteer, or simply want to say hello? We'd love to hear from you.
-        </p>
+<?php
+$contactCards = [
+    ['label' => 'Email', 'value' => 'info@kidswithsolution.org', 'href' => 'mailto:info@kidswithsolution.org'],
+    ['label' => 'Phone', 'value' => '+1 (234) 567-890', 'href' => 'tel:+1234567890'],
+    ['label' => 'Location', 'value' => '123 Innovation Drive, Tech City, TC 10010', 'href' => null],
+];
+?>
+
+<section class="bg-brand-surface pattern-bg">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+        <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Contact</p>
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl">Talk to us before you register.</h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">If you want help choosing a bootcamp, have a question about child safety, or need more clarity on the registration process, our team is ready to help.</p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 text-base font-bold text-white shadow-soft">Register Now</a>
+                <a href="mailto:info@kidswithsolution.org" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-brand-ink">Email Us</a>
+            </div>
+        </div>
+
+        <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft">
+            <img src="<?php echo $baseUrl; ?>/img/hero/contact_us.jpeg" alt="Family contacting the bootcamp team" class="h-[380px] w-full object-cover">
+            <div class="grid gap-4 border-t border-slate-200 p-6 sm:grid-cols-3">
+                <div>
+                    <p class="text-sm font-semibold text-brand-muted">Response time</p>
+                    <p class="mt-1 text-base font-bold text-brand-ink">Within 1 business day</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-brand-muted">Support</p>
+                    <p class="mt-1 text-base font-bold text-brand-ink">Parent questions welcome</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-brand-muted">Next step</p>
+                    <p class="mt-1 text-base font-bold text-brand-ink">Registration guidance</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Contact Form & Info -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-16">
-        
-        <!-- Contact Information -->
-        <div class="lg:w-1/3">
-            <h2 class="text-3xl font-bold text-brand-dark mb-8">Get In Touch</h2>
-            <p class="text-gray-600 mb-10 text-lg">Our team is always ready to assist you. Reach out via email, phone, or fill out the form.</p>
-            
-            <div class="space-y-8">
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-green-100 text-brand-green rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-brand-dark">Email</h4>
-                        <a href="mailto:info@kidswithsolution.org" class="text-brand-blue hover:text-blue-700">info@kidswithsolution.org</a>
-                    </div>
-                </div>
-                
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-brand-dark">Phone</h4>
-                        <a href="tel:+1234567890" class="text-gray-600 hover:text-brand-dark">+1 (234) 567-890</a>
-                    </div>
+<section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+                <h2 class="text-3xl font-extrabold text-brand-ink">Quick contact details</h2>
+                <p class="mt-4 text-base leading-8 text-brand-muted">Use the channel that is easiest for you. We keep communication simple and practical so parents can get answers quickly.</p>
+                <div class="mt-8 space-y-5">
+                    <?php foreach ($contactCards as $card): ?>
+                        <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5 shadow-soft">
+                            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-muted"><?php echo htmlspecialchars($card['label'], ENT_QUOTES); ?></p>
+                            <?php if ($card['href'] !== null): ?>
+                                <a href="<?php echo htmlspecialchars($card['href'], ENT_QUOTES); ?>" class="mt-2 block text-lg font-semibold text-brand-blue"><?php echo htmlspecialchars($card['value'], ENT_QUOTES); ?></a>
+                            <?php else: ?>
+                                <p class="mt-2 text-lg font-semibold text-brand-ink"><?php echo htmlspecialchars($card['value'], ENT_QUOTES); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-purple-100 text-brand-purple rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold text-brand-dark">Location</h4>
-                        <p class="text-gray-600">123 Innovation Drive,<br>Tech City, TC 10010</p>
-                    </div>
+                <div class="mt-8 rounded-3xl border border-slate-200 bg-brand-blue p-7 text-white shadow-soft">
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Social proof</p>
+                    <p class="mt-3 text-base leading-8 text-white/85">Parents use this page when they want a straightforward answer before registering. We recommend choosing the right program first, then completing the form once you are comfortable.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Contact Form -->
-        <div class="lg:w-2/3">
-            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
-                <form action="#" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-8 shadow-soft">
+                <h2 class="text-3xl font-extrabold text-brand-ink">Send us a message</h2>
+                <p class="mt-4 text-base leading-8 text-brand-muted">Tell us what you need and we will respond with the most relevant next step.</p>
+                <form action="#" method="POST" class="mt-8 space-y-6">
+                    <div class="grid gap-6 md:grid-cols-2">
                         <div>
-                            <label for="first_name" class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-                            <input type="text" id="first_name" name="first_name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors outline-none" required>
+                            <label for="first_name" class="block text-sm font-semibold text-slate-700">First name</label>
+                            <input type="text" id="first_name" name="first_name" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15" required>
                         </div>
                         <div>
-                            <label for="last_name" class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors outline-none" required>
+                            <label for="last_name" class="block text-sm font-semibold text-slate-700">Last name</label>
+                            <input type="text" id="last_name" name="last_name" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15" required>
                         </div>
                     </div>
-                    
                     <div>
-                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors outline-none" required>
+                        <label for="email" class="block text-sm font-semibold text-slate-700">Email address</label>
+                        <input type="email" id="email" name="email" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15" required>
                     </div>
-
                     <div>
-                        <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-                        <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors outline-none bg-white">
-                            <option>General Inquiry</option>
-                            <option>Program Registration Question</option>
-                            <option>Donation & Sponsorship</option>
-                            <option>Volunteer Opportunities</option>
+                        <label for="subject" class="block text-sm font-semibold text-slate-700">What do you need help with?</label>
+                        <select id="subject" name="subject" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15">
+                            <option>Program registration question</option>
+                            <option>Age and suitability</option>
+                            <option>Schedule and cohort details</option>
+                            <option>General enquiry</option>
                         </select>
                     </div>
-
                     <div>
-                        <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-green focus:border-brand-green transition-colors outline-none resize-none" required></textarea>
+                        <label for="message" class="block text-sm font-semibold text-slate-700">Message</label>
+                        <textarea id="message" name="message" rows="5" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15" required></textarea>
                     </div>
-
-                    <button type="submit" class="w-full bg-brand-green hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-md hover:shadow-lg transition-all text-lg">
-                        Send Message
-                    </button>
-                    <p class="text-sm text-gray-500 text-center mt-4 text-balance">By submitting this form, you agree to our privacy policy regarding data collection.</p>
+                    <button type="submit" class="w-full rounded-full bg-brand-green px-6 py-4 text-base font-bold text-white shadow-soft">Send Message</button>
+                    <p class="text-center text-sm text-brand-muted">By sending this form you agree to us using your details to respond to your enquiry.</p>
                 </form>
             </div>
         </div>
-        
+    </div>
+</section>
+
+<section class="bg-brand-ink py-16 text-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:px-8">
+        <div class="max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/60">Prefer to register now?</p>
+            <h2 class="mt-3 text-3xl font-extrabold">You can move straight to registration once you have the answers you need.</h2>
+        </div>
+        <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-brand-blue">Register Now</a>
     </div>
 </section>

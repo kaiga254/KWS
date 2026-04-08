@@ -1,259 +1,251 @@
-<!-- Hero Section -->
-<section class="relative bg-brand-light py-20 lg:py-32 overflow-hidden">
-    <!-- Decorative background elements -->
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-green opacity-10 blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-brand-blue opacity-10 blur-3xl"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight mb-6">
-                    Empowering the Next Generation of <span class="text-brand-green">Digital Leaders</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-                    Kids With Solution Foundation equips children and young people with essential digital literacy skills through structured, hands-on bootcamps.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="/KidsWithSolutions-master/public/register" class="bg-brand-green hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-center">
-                        Register a Child
-                    </a>
-                    <a href="/KidsWithSolutions-master/public/donate" class="bg-white border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 text-center">
-                        Support Our Mission
-                    </a>
+<?php
+$programs = [
+    [
+        'title' => 'Digital Foundations',
+        'age' => 'Ages 6-9',
+        'duration' => '4 weeks',
+        'schedule' => 'Saturday mornings',
+        'location' => 'Partner school labs',
+        'pricing' => 'Subsidized cohort fee',
+        'outcomes' => 'Keyboard confidence, safe device use, early problem-solving',
+        'image' => $baseUrl . '/img/programs/basic_computer_skills.jpeg',
+        'accent' => 'bg-brand-blue/10 text-brand-blue',
+    ],
+    [
+        'title' => 'Coding for Kids',
+        'age' => 'Ages 10-13',
+        'duration' => '8 weeks',
+        'schedule' => 'After-school sessions',
+        'location' => 'Foundation learning hub',
+        'pricing' => 'Subsidized cohort fee',
+        'outcomes' => 'Scratch logic, creative thinking, web basics',
+        'image' => $baseUrl . '/img/programs/coding_for_kids.jpeg',
+        'accent' => 'bg-brand-green/10 text-brand-green',
+    ],
+    [
+        'title' => 'Digital Literacy & Safety',
+        'age' => 'Ages 13-17',
+        'duration' => '2 weeks',
+        'schedule' => 'Holiday bootcamp',
+        'location' => 'School or community venue',
+        'pricing' => 'Subsidized cohort fee',
+        'outcomes' => 'Online safety, privacy, responsible digital habits',
+        'image' => $baseUrl . '/img/programs/digital_literacy.jpeg',
+        'accent' => 'bg-brand-amber/10 text-brand-amber',
+    ],
+];
+
+$benefits = [
+    'Small classes with guided support',
+    'Practical outcomes parents can see at home',
+    'Age-appropriate content and safe learning spaces',
+    'Regular parent updates and progress feedback',
+];
+
+$testimonials = [
+    [
+        'quote' => 'The bootcamp gave my son confidence with computers and showed me that he was learning in a safe, structured environment.',
+        'name' => 'Amina, Parent',
+    ],
+    [
+        'quote' => 'The lessons were fun, and I now understand how to use the internet safely and build simple projects on my own.',
+        'name' => 'Brian, Age 12',
+    ],
+    [
+        'quote' => 'Their communication with parents is excellent, and the children come home excited to show what they learned.',
+        'name' => 'Ms. Grace, Teacher',
+    ],
+];
+
+$faqs = [
+    [
+        'question' => 'Is the program safe for my child?',
+        'answer' => 'Yes. Sessions are supervised, age-appropriate, and designed to keep children focused on practical digital learning in a child-safe environment.',
+    ],
+    [
+        'question' => 'Does my child need prior computer experience?',
+        'answer' => 'No. We teach beginners and intermediate learners, and every module is structured to meet children where they are.',
+    ],
+    [
+        'question' => 'How do I know which bootcamp is right?',
+        'answer' => 'Use the age band and outcomes shown on each card, or contact us and we will help you choose the best cohort for your child.',
+    ],
+    [
+        'question' => 'What happens after registration?',
+        'answer' => 'Our team confirms the intake, shares cohort details, and follows up with the next steps for payment, scheduling, and venue information.',
+    ],
+];
+?>
+
+<section class="bg-brand-surface pattern-bg">
+    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+        <div>
+            <span class="inline-flex items-center rounded-full border border-brand-blue/15 bg-white px-4 py-2 text-sm font-semibold text-brand-blue shadow-soft">Trusted digital literacy bootcamps for parents who want clarity</span>
+            <h1 class="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl lg:text-6xl">Give your child practical digital skills in a program you can trust.</h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">Kids With Solution Foundation helps children ages 6-17 build confidence with technology, learn safely, and gain real-world skills through small-group bootcamps guided by supportive instructors.</p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 text-base font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5">Register Now</a>
+                <a href="<?php echo $baseUrl; ?>/programs" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-4 text-base font-semibold text-brand-ink transition-colors hover:border-brand-blue hover:text-brand-blue">Explore Programs</a>
+            </div>
+            <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+                    <p class="text-2xl font-extrabold text-brand-blue">500+</p>
+                    <p class="mt-1 text-sm text-brand-muted">Children trained</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+                    <p class="text-2xl font-extrabold text-brand-green">15+</p>
+                    <p class="mt-1 text-sm text-brand-muted">Partner schools</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+                    <p class="text-2xl font-extrabold text-brand-amber">4.9/5</p>
+                    <p class="mt-1 text-sm text-brand-muted">Parent satisfaction</p>
                 </div>
             </div>
-            
-            <div class="relative hidden lg:block">
-                <!-- Abstract Illustration / Placeholder -->
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white aspect-video flex items-center justify-center p-8 border border-gray-100">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="flex justify-center mb-6">
-                            <div class="w-20 h-20 bg-brand-purple rounded-full opacity-20 absolute animate-ping"></div>
-                            <div class="w-16 h-16 bg-brand-blue rounded-full absolute -mr-12 -mt-8 opacity-80 mix-blend-multiply"></div>
-                            <div class="w-16 h-16 bg-brand-green rounded-full absolute -ml-12 mt-8 opacity-80 mix-blend-multiply"></div>
-                            <svg class="w-20 h-20 text-brand-dark relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        </div>
+
+        <div class="relative">
+            <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-soft">
+                <img src="<?php echo $baseUrl; ?>/img/hero/programs.jpeg" alt="Children learning in a digital literacy bootcamp" class="h-[420px] w-full object-cover">
+            </div>
+            <div class="absolute -bottom-8 left-6 right-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-soft">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted">What parents get</p>
+                        <p class="mt-1 text-lg font-bold text-brand-ink">Safe classes, measurable progress, clear communication</p>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm font-semibold text-brand-green">
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-green/10">✓</span>
+                        Secure registration
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="border-y border-slate-200 bg-white py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-4 md:grid-cols-4">
+            <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5 text-center">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted">Trusted by</p>
+                <p class="mt-2 text-lg font-bold text-brand-ink">Parents and schools</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-center"><img src="<?php echo $baseUrl; ?>/img/logos/ACWICT.jpg" alt="ACWICT logo" class="max-h-12 w-auto object-contain"></div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-center"><img src="<?php echo $baseUrl; ?>/img/logos/usiu.png" alt="USIU logo" class="max-h-12 w-auto object-contain"></div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-center"><img src="<?php echo $baseUrl; ?>/img/logos/ACWICT_1.jpg" alt="ACWICT partner logo" class="max-h-12 w-auto object-contain"></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-2xl">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Programs</p>
+                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Clear bootcamp options parents can scan in seconds.</h2>
+                <p class="mt-4 text-lg text-brand-muted">Every program card shows the age group, duration, schedule, location, and what your child will actually learn.</p>
+            </div>
+            <a href="<?php echo $baseUrl; ?>/programs" class="inline-flex items-center gap-2 text-sm font-bold text-brand-blue">View all details <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-3">
+            <?php foreach ($programs as $program): ?>
+                <article class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+                    <img src="<?php echo htmlspecialchars($program['image'], ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($program['title'], ENT_QUOTES); ?>" class="h-52 w-full object-cover">
+                    <div class="p-7">
+                        <div class="flex items-center justify-between gap-3">
+                            <span class="inline-flex rounded-full px-3 py-1 text-xs font-bold <?php echo $program['accent']; ?>"><?php echo htmlspecialchars($program['age'], ENT_QUOTES); ?></span>
+                            <span class="text-sm font-semibold text-brand-muted"><?php echo htmlspecialchars($program['duration'], ENT_QUOTES); ?></span>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800">Learn. Build. Innovate.</h3>
+                        <h3 class="mt-5 text-2xl font-bold text-brand-ink"><?php echo htmlspecialchars($program['title'], ENT_QUOTES); ?></h3>
+                        <p class="mt-3 text-sm leading-7 text-brand-muted"><?php echo htmlspecialchars($program['outcomes'], ENT_QUOTES); ?></p>
+                        <dl class="mt-6 space-y-3 text-sm text-slate-700">
+                            <div class="flex justify-between gap-4 border-b border-slate-100 pb-3"><dt class="text-slate-500">Schedule</dt><dd class="font-semibold text-right"><?php echo htmlspecialchars($program['schedule'], ENT_QUOTES); ?></dd></div>
+                            <div class="flex justify-between gap-4 border-b border-slate-100 pb-3"><dt class="text-slate-500">Location</dt><dd class="font-semibold text-right"><?php echo htmlspecialchars($program['location'], ENT_QUOTES); ?></dd></div>
+                            <div class="flex justify-between gap-4"><dt class="text-slate-500">Pricing</dt><dd class="font-semibold text-right"><?php echo htmlspecialchars($program['pricing'], ENT_QUOTES); ?></dd></div>
+                        </dl>
+                        <a href="<?php echo $baseUrl; ?>/register" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand-green px-5 py-3 text-sm font-bold text-white">Register for this cohort</a>
                     </div>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-2">
+            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-8">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Why parents choose us</p>
+                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">A child-friendly experience with parent-level clarity.</h2>
+                <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                    <?php foreach ($benefits as $benefit): ?>
+                        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+                            <p class="text-sm font-semibold text-brand-ink"><?php echo htmlspecialchars($benefit, ENT_QUOTES); ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
+            </div>
+
+            <div class="rounded-3xl border border-slate-200 bg-brand-blue p-8 text-white shadow-soft">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">How the learning feels</p>
+                <ul class="mt-6 space-y-4 text-sm leading-7 text-white/85">
+                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15">1</span><span>Friendly instructors explain every step so children do not get lost.</span></li>
+                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15">2</span><span>Hands-on practice helps learners build confidence quickly.</span></li>
+                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15">3</span><span>Parents receive a straightforward update on progress and next steps.</span></li>
+                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15">4</span><span>Children leave with practical skills they can use at home and at school.</span></li>
+                </ul>
+                <a href="<?php echo $baseUrl; ?>/register" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-brand-blue">Book a Slot</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- About Preview -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-sm font-bold tracking-wide text-brand-purple uppercase mb-2">Who We Are</h2>
-            <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Bridging the Digital Divide</h3>
-            <p class="text-lg text-gray-600 mb-8">
-                We believe that every child deserves access to quality tech education. Our foundation works tirelessly to ensure that young minds are not left behind in this rapidly evolving digital world.
-            </p>
-            <a href="/KidsWithSolutions-master/public/about" class="text-brand-blue font-semibold hover:text-blue-700 flex items-center justify-center gap-2 group">
-                Read our full story
-                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
+<section id="testimonials" class="bg-brand-surface py-20 scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Testimonials</p>
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Parents and learners describe the experience as clear, safe, and worthwhile.</h2>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            <?php foreach ($testimonials as $testimonial): ?>
+                <figure class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
+                    <div class="flex gap-1 text-brand-amber" aria-hidden="true">★★★★★</div>
+                    <blockquote class="mt-5 text-base leading-8 text-slate-700">"<?php echo htmlspecialchars($testimonial['quote'], ENT_QUOTES); ?>"</blockquote>
+                    <figcaption class="mt-6 text-sm font-semibold text-brand-ink"><?php echo htmlspecialchars($testimonial['name'], ENT_QUOTES); ?></figcaption>
+                </figure>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
-<!-- Programs Overview -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Our Bootcamps</h2>
-                <p class="text-gray-600 max-w-2xl">Structured programs designed to take students from basics to advanced digital literacy.</p>
-            </div>
-            <a href="/KidsWithSolutions-master/public/programs" class="hidden md:flex text-brand-green font-semibold hover:text-green-700 items-center gap-2">
-                View All Programs
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
+<section class="bg-white py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">FAQ</p>
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Questions parents usually ask before registering.</h2>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Program Card 1 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
-                <div class="h-48 bg-blue-100 relative">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <img src="/KidsWithSolutions-master/public/img/programs/basic_computer_skills.jpeg" alt="Basic Computer Skills" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                        <svg class="hidden w-16 h-16 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
+        <div class="mt-10 space-y-4">
+            <?php foreach ($faqs as $faq): ?>
+                <div class="rounded-2xl border border-slate-200 bg-brand-surface p-6">
+                    <h3 class="text-lg font-bold text-brand-ink"><?php echo htmlspecialchars($faq['question'], ENT_QUOTES); ?></h3>
+                    <p class="mt-3 text-sm leading-7 text-brand-muted"><?php echo htmlspecialchars($faq['answer'], ENT_QUOTES); ?></p>
                 </div>
-                <div class="p-8">
-                    <span class="inline-block px-3 py-1 bg-green-100 text-brand-green rounded-full text-xs font-semibold mb-4">Ages 8-12</span>
-                    <h3 class="text-xl font-bold mb-3">Basic Computer Skills</h3>
-                    <p class="text-gray-600 mb-6 text-sm">Introduction to typing, internet safety, and basic software usage for beginners.</p>
-                    <a href="/KidsWithSolutions-master/public/programs" class="text-brand-blue font-semibold hover:underline">Learn More &rarr;</a>
-                </div>
-            </div>
-            
-            <!-- Program Card 2 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
-                <div class="h-48 bg-purple-100 relative">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <img src="/KidsWithSolutions-master/public/img/programs/coding_for_kids.jpeg" alt="Coding for Kids" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                        <svg class="hidden w-16 h-16 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <span class="inline-block px-3 py-1 bg-green-100 text-brand-green rounded-full text-xs font-semibold mb-4">Ages 10-15</span>
-                    <h3 class="text-xl font-bold mb-3">Coding for Kids</h3>
-                    <p class="text-gray-600 mb-6 text-sm">Block-based programming and introduction to web development basics (HTML/CSS).</p>
-                    <a href="/KidsWithSolutions-master/public/programs" class="text-brand-blue font-semibold hover:underline">Learn More &rarr;</a>
-                </div>
-            </div>
-            
-            <!-- Program Card 3 -->
-            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all hover-lift overflow-hidden border border-gray-100">
-                <div class="h-48 bg-green-100 relative">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <img src="/KidsWithSolutions-master/public/img/programs/digital_literacy.jpeg" alt="Digital Literacy and Safety" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
-                        <svg class="hidden w-16 h-16 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-
-                    </div>
-                </div>
-                <div class="p-8">
-                    <span class="inline-block px-3 py-1 bg-green-100 text-brand-green rounded-full text-xs font-semibold mb-4">Ages 13-18</span>
-                    <h3 class="text-xl font-bold mb-3">Digital Literacy & Safety</h3>
-                    <p class="text-gray-600 mb-6 text-sm">Understanding online privacy, cyberbullying, and responsible digital footprint management.</p>
-                    <a href="/KidsWithSolutions-master/public/programs" class="text-brand-blue font-semibold hover:underline">Learn More &rarr;</a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
 
-<!-- Impact Section -->
-<section class="py-20 bg-brand-green text-white relative" id="impact-section">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact So Far</h2>
-            <p class="text-white opacity-90 max-w-2xl mx-auto">Tangible results from our community-driven initiatives.</p>
+<section class="bg-brand-ink py-16 text-white">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:px-8">
+        <div class="max-w-2xl">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/60">Ready when you are</p>
+            <h2 class="mt-3 text-3xl font-extrabold">Secure a place for your child in the next cohort.</h2>
+            <p class="mt-4 text-white/75">If you are unsure which bootcamp fits best, our team can help you choose in one conversation.</p>
         </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="500">0</div>
-                <div class="text-white opacity-90 font-medium">Students Trained</div>
-            </div>
-            <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="25">0</div>
-                <div class="text-white opacity-90 font-medium">Bootcamps Held</div>
-            </div>
-            <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="15">0</div>
-                <div class="text-white opacity-90 font-medium">Partner Schools</div>
-            </div>
-            <div class="p-6">
-                <div class="text-4xl md:text-5xl font-bold text-white mb-2 counter" data-target="100" data-suffix="%">0</div>
-                <div class="text-white opacity-90 font-medium">Dedication</div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const options = {
-                threshold: 0.5
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                        entry.target.classList.add('animated');
-                        const target = parseInt(entry.target.getAttribute('data-target'));
-                        const suffix = entry.target.getAttribute('data-suffix') || '';
-                        const duration = 2000; // 2 seconds
-                        const start = Date.now();
-
-                        const animate = () => {
-                            const now = Date.now();
-                            const progress = Math.min((now - start) / duration, 1);
-                            const value = Math.floor(progress * target);
-                            entry.target.textContent = value + suffix;
-
-                            if (progress < 1) {
-                                requestAnimationFrame(animate);
-                            } else {
-                                entry.target.textContent = target + '+' + suffix;
-                            }
-                        };
-
-                        animate();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, options);
-
-            counters.forEach(counter => observer.observe(counter));
-        }
-
-        // Start animation when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', animateCounters);
-        } else {
-            animateCounters();
-        }
-    </script>
-</section>
-
-<!-- Testimonials -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-dark mb-16">Testimonials</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-8 rounded-2xl">
-                <div class="flex items-center gap-1 text-yellow-400 mb-4">
-                    ★★★★★
-                </div>
-                <p class="text-gray-600 mb-6 italic">"The bootcamp transformed my daughter's understanding of computers. She now builds small web pages just for fun!"</p>
-                <div class="font-bold text-brand-dark">- Sarah J., Parent</div>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-2xl">
-                <div class="flex items-center gap-1 text-yellow-400 mb-4">
-                    ★★★★
-                </div>
-                <p class="text-gray-600 mb-6 italic">"I learned how to type properly and understand the internet. It was fun and the teachers were very nice."</p>
-                <div class="font-bold text-brand-dark">- Michael, 12 yrs</div>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-2xl">
-                <div class="flex items-center gap-1 text-yellow-400 mb-4">
-                    ★★★★★
-                </div>
-                <p class="text-gray-600 mb-6 italic">"This foundation is providing crucial skills that traditional schools around here often miss. Highly recommend supporting them."</p>
-                <div class="font-bold text-brand-dark">- Mr. David, Teacher</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Partners -->
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Our Partners</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">We collaborate with organizations that share our commitment to empowering young digital learners.</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/logos/ACWICT.jpg" alt="ACWICT logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
-            </div>
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/logos/usiu.png" alt="USIU logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
-            </div>
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/logos/ACWICT_1.jpg" alt="ACWICT partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
-            </div>
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all flex items-center justify-center h-32">
-                <img src="/KidsWithSolutions-master/public/img/logos/usiu_1.png" alt="USIU partner logo" class="max-h-14 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
-            </div>
+        <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 text-base font-bold text-white">Register Now</a>
+            <a href="<?php echo $baseUrl; ?>/contact" class="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 text-base font-semibold text-white">Talk to Us</a>
         </div>
     </div>
 </section>
