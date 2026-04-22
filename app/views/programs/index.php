@@ -133,43 +133,7 @@ $faqItems = [
     </div>
 </section>
 
-<section class="bg-brand-surface py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-2">
-            <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">What makes the programs parent-friendly</p>
-                <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5">
-                        <p class="font-bold text-brand-ink">Structured cohorts</p>
-                        <p class="mt-2 text-sm leading-7 text-brand-muted">Clear start and end dates so families can plan ahead.</p>
-                    </div>
-                    <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5">
-                        <p class="font-bold text-brand-ink">Simple outcomes</p>
-                        <p class="mt-2 text-sm leading-7 text-brand-muted">Children leave each class knowing what they learned.</p>
-                    </div>
-                    <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5">
-                        <p class="font-bold text-brand-ink">Visible progress</p>
-                        <p class="mt-2 text-sm leading-7 text-brand-muted">Parents get updates on skill-building and attendance.</p>
-                    </div>
-                    <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5">
-                        <p class="font-bold text-brand-ink">Friendly support</p>
-                        <p class="mt-2 text-sm leading-7 text-brand-muted">Questions are answered quickly by our team.</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-brand-blue p-8 text-white shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Registration flow</p>
-                <ol class="mt-6 space-y-4 text-sm leading-7 text-white/85">
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">1</span><span>Choose the program that matches your child’s age group.</span></li>
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">2</span><span>Complete the short registration form with parent and child details.</span></li>
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">3</span><span>Our team confirms the intake and shares schedule details.</span></li>
-                </ol>
-                <a href="<?php echo $baseUrl; ?>/register" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-brand-blue">Start Registration</a>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="bg-white py-20">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

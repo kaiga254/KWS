@@ -72,7 +72,7 @@ $faqs = [
     ],
     [
         'question' => 'What happens after registration?',
-        'answer' => 'Our team confirms the intake, shares cohort details, and follows up with the next steps for payment, scheduling, and venue information.',
+        'answer' => 'Our team confirms the intake, shares cohort details, and follows up with the next steps for payment, scheduling, and venue information in person.',
     ],
 ];
 ?>
@@ -80,7 +80,7 @@ $faqs = [
 <section class="bg-brand-surface pattern-bg">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
         <div>
-            <span class="inline-flex items-center rounded-full border border-brand-blue/15 bg-white px-4 py-2 text-sm font-semibold text-brand-blue shadow-soft">Trusted digital literacy bootcamps for parents who want clarity</span>
+            
             <h1 class="mt-6 max-w-3xl text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl lg:text-6xl">Give your child practical digital skills in a program you can trust.</h1>
             <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">Kids With Solution Foundation helps children ages 6-17 build confidence with technology, learn safely, and gain real-world skills through small-group bootcamps guided by supportive instructors.</p>
             <div class="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -89,12 +89,12 @@ $faqs = [
             </div>
             <div class="mt-8 grid gap-4 sm:grid-cols-3">
                 <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
-                    <p class="text-2xl font-extrabold text-brand-blue">500+</p>
+                    <p class="text-2xl font-extrabold text-brand-blue">200+</p>
                     <p class="mt-1 text-sm text-brand-muted">Children trained</p>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
-                    <p class="text-2xl font-extrabold text-brand-green">15+</p>
-                    <p class="mt-1 text-sm text-brand-muted">Partner schools</p>
+                    <p class="text-2xl font-extrabold text-brand-green">5+</p>
+                    <p class="mt-1 text-sm text-brand-muted">Year of operation</p>
                 </div>
                 <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
                     <p class="text-2xl font-extrabold text-brand-amber">4.9/5</p>
@@ -115,7 +115,7 @@ $faqs = [
                     </div>
                     <div class="flex items-center gap-3 text-sm font-semibold text-brand-green">
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-green/10">✓</span>
-                        Secure registration
+                        Easy registration
                     </div>
                 </div>
             </div>
@@ -142,8 +142,8 @@ $faqs = [
         <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div class="max-w-2xl">
                 <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Programs</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Clear bootcamp options parents can scan in seconds.</h2>
-                <p class="mt-4 text-lg text-brand-muted">Every program card shows the age group, duration, schedule, location, and what your child will actually learn.</p>
+                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Explore Our Digital Literacy Programs</h2>
+                <p class="mt-4 text-lg text-brand-muted">Discover the perfect digital literacy program for your child.</p>
             </div>
             <a href="<?php echo $baseUrl; ?>/programs" class="inline-flex items-center gap-2 text-sm font-bold text-brand-blue">View all details <span aria-hidden="true">→</span></a>
         </div>
@@ -205,7 +205,7 @@ $faqs = [
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl">
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Testimonials</p>
-            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">Parents and learners describe the experience as clear, safe, and worthwhile.</h2>
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink md:text-4xl">What Parents and Learners Are Saying</h2>
         </div>
         <div class="mt-10 grid gap-6 lg:grid-cols-3">
             <?php foreach ($testimonials as $testimonial): ?>

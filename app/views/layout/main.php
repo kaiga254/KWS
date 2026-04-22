@@ -56,18 +56,13 @@ $isActive = function (string $href) use ($currentPath): bool {
     </style>
 </head>
 <body class="font-sans bg-brand-surface text-brand-ink antialiased flex min-h-screen flex-col">
-    <div class="bg-brand-blue text-white text-sm">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-            <p class="font-medium">Parent-first digital literacy bootcamps for children ages 6-17.</p>
-            <p class="hidden sm:block text-white/80">Small groups, practical skills, and clear parent communication.</p>
-        </div>
-    </div>
+    
 
     <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-20 items-center justify-between gap-4">
                 <a href="<?php echo $baseUrl; ?>/home" class="flex items-center gap-3">
-                    <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-blue text-lg font-extrabold text-white shadow-soft">K</div>
+                    <img src="<?php echo $baseUrl; ?>/img/logos/logo.jpg" alt="Kids With Solution Foundation Logo" class="h-11 w-15 rounded-1xl">
                     <div>
                         <span class="block text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted">Kids With Solution</span>
                         <span class="block text-sm font-medium text-brand-ink sm:text-base">Foundation</span>
@@ -117,7 +112,7 @@ $isActive = function (string $href) use ($currentPath): bool {
             <div class="grid gap-12 lg:grid-cols-12">
                 <div class="lg:col-span-5">
                     <div class="flex items-center gap-3">
-                        <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-lg font-extrabold text-brand-blue">K</div>
+                        <img src="<?php echo $baseUrl; ?>/img/logos/logo.jpg" alt="Kids With Solution Foundation Logo" class="h-11 w-15 rounded-1xl">
                         <div>
                             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-white/65">Kids With Solution</p>
                             <h2 class="text-xl font-bold">Foundation</h2>

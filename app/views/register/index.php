@@ -16,8 +16,8 @@ $checked = function (string $key, string $choice) use ($old): string {
     <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
         <div>
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Registration</p>
-            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl">Register your child in a guided, parent-friendly flow.</h1>
-            <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">The form below is short, secure, and broken into simple steps so you can complete it without feeling overwhelmed.</p>
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl">Register your child in three simple steps.</h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">The form below is short, secure, and broken into simple steps for a seamless registration experience.</p>
             <div class="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-brand-ink">
                 <span class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 shadow-soft">Secure registration</span>
                 <span class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 shadow-soft">Ages 6-17</span>
@@ -134,7 +134,6 @@ $checked = function (string $key, string $choice) use ($old): string {
                                 <div class="mt-3 flex flex-wrap gap-4">
                                     <label class="flex items-center gap-2 text-sm font-medium text-slate-700"><input type="radio" name="child_gender" value="Male" <?php echo $checked('child_gender', 'Male'); ?> class="h-4 w-4 border-slate-300 text-brand-green focus:ring-brand-green"> Male</label>
                                     <label class="flex items-center gap-2 text-sm font-medium text-slate-700"><input type="radio" name="child_gender" value="Female" <?php echo $checked('child_gender', 'Female'); ?> class="h-4 w-4 border-slate-300 text-brand-green focus:ring-brand-green"> Female</label>
-                                    <label class="flex items-center gap-2 text-sm font-medium text-slate-700"><input type="radio" name="child_gender" value="Other" <?php echo $checked('child_gender', 'Other'); ?> class="h-4 w-4 border-slate-300 text-brand-green focus:ring-brand-green"> Other</label>
                                 </div>
                             </div>
                         </div>
@@ -172,19 +171,10 @@ $checked = function (string $key, string $choice) use ($old): string {
         </div>
 
         <aside class="space-y-6 lg:sticky lg:top-28 lg:self-start">
-            <div class="rounded-3xl border border-slate-200 bg-brand-blue p-7 text-white shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Why parents choose this flow</p>
-                <ul class="mt-5 space-y-4 text-sm leading-7 text-white/85">
-                    <li>Clear steps reduce friction and confusion.</li>
-                    <li>The age band is shown before you commit.</li>
-                    <li>We keep the form short and relevant.</li>
-                    <li>Our team follows up with next steps after submission.</li>
-                </ul>
-            </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Need help?</p>
-                <p class="mt-3 text-base leading-8 text-brand-muted">If you are not sure which program to pick, contact us first and we will help you choose the right cohort.</p>
+            <div class="rounded-3xl border border-slate-200 bg-brand-blue p-7 text-white shadow-soft">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Need help?</p>
+                <p class="mt-3 text-base leading-8 text-white/85">If you are not sure which program to pick, contact us first and we will help you choose the right cohort.</p>
                 <a href="<?php echo $baseUrl; ?>/contact" class="mt-5 inline-flex rounded-full border border-slate-300 bg-brand-surface px-5 py-3 text-sm font-bold text-brand-ink">Contact Support</a>
             </div>
         </aside>

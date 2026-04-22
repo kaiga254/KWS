@@ -58,7 +58,7 @@ $contactCards = [
                 </div>
 
                 <div class="mt-8 rounded-3xl border border-slate-200 bg-brand-blue p-7 text-white shadow-soft">
-                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Social proof</p>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Quick tip</p>
                     <p class="mt-3 text-base leading-8 text-white/85">Parents use this page when they want a straightforward answer before registering. We recommend choosing the right program first, then completing the form once you are comfortable.</p>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 <?php
 $highlights = [
-    ['label' => 'Children reached', 'value' => '500+'],
-    ['label' => 'Bootcamps delivered', 'value' => '25+'],
-    ['label' => 'Partner schools', 'value' => '15+'],
+    ['label' => 'Children reached', 'value' => '200+'],
+    ['label' => 'Bootcamps delivered', 'value' => '5+'],
+    ['label' => 'Partner organizations', 'value' => '5+'],
 ];
 
 $values = [
@@ -27,24 +27,28 @@ $values = [
 $team = [
     [
         'image' => $baseUrl . '/img/founders/dir-1.jpg',
+        'name' => 'Patricia Mulinya',
         'role' => 'Program Director',
         'focus' => 'Parent communication, cohort planning, child safeguarding',
         'summary' => 'Oversees the learning experience and ensures every cohort stays organized, supportive, and parent-friendly.',
     ],
     [
         'image' => $baseUrl . '/img/founders/dir-2.jpg',
+        'name' => 'Peter Muchiri',
         'role' => 'Lead Instructor',
         'focus' => 'Digital foundations, beginner support, practical teaching',
         'summary' => 'Guides children through core computer skills with a hands-on, calm, and patient teaching style.',
     ],
     [
         'image' => $baseUrl . '/img/founders/dir-3.jpg',
+        'name' => 'Emily Chen',
         'role' => 'Learning Coach',
         'focus' => 'Coding exercises, feedback, learner confidence',
         'summary' => 'Supports children during class work and helps them build confidence as they complete projects.',
     ],
     [
         'image' => $baseUrl . '/img/founders/dir-4.jpg',
+        'name' => 'Michael Lee',
         'role' => 'Community Liaison',
         'focus' => 'School partnerships, parent support, outreach',
         'summary' => 'Maintains relationships with schools and parents so communication stays simple and responsive.',
@@ -82,15 +86,12 @@ $team = [
             <div class="rounded-3xl border border-slate-200 bg-brand-surface p-8 shadow-soft">
                 <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Our mission</p>
                 <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">Give every child a strong digital foundation.</h2>
-                <p class="mt-4 text-base leading-8 text-brand-muted">Our programs focus on practical skills, not jargon. Children learn how to use technology safely, think creatively, and approach new tools with confidence. Parents get a straightforward picture of what is being taught and why it matters.</p>
+                <p class="mt-4 text-base leading-8 text-brand-muted">We believe every child should have the opportunity to develop strong digital skills that will serve them throughout their lives.</p>
             </div>
             <div class="rounded-3xl border border-slate-200 bg-brand-blue p-8 text-white shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/65">Our approach</p>
-                <ul class="mt-6 space-y-4 text-sm leading-7 text-white/85">
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">1</span><span>Small classes so each child can ask questions and practice with support.</span></li>
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">2</span><span>Clear outcomes that parents can understand without a technical background.</span></li>
-                    <li class="flex gap-3"><span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 font-bold">3</span><span>Safe, structured learning spaces with a friendly team and parent communication.</span></li>
-                </ul>
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/65">Our Vision</p>
+                <h2 class="mt-3 text-3xl font-extrabold text-white">A world where digital literacy is practical, age-appropriate, and accessible for all children.</h2>
+                <p class="mt-4 text-base leading-8 text-white/75">We envision a future where every child has the opportunity to build confidence with technology in a way that is safe, supportive, and empowering.</p>
             </div>
         </div>
     </div>
@@ -116,17 +117,18 @@ $team = [
 <section id="instructors" class="bg-white py-20 scroll-mt-28">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl">
-            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Instructors</p>
-            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">People parents can feel comfortable trusting with their children.</h2>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Our Team</p>
+            <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">Meet our team</h2>
             <p class="mt-4 text-base leading-8 text-brand-muted">Our team brings together learning support, child-safe facilitation, community coordination, and parent communication so every cohort runs smoothly.</p>
         </div>
 
         <div class="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
             <?php foreach ($team as $member): ?>
                 <article class="overflow-hidden rounded-3xl border border-slate-200 bg-brand-surface shadow-soft">
-                    <img src="<?php echo htmlspecialchars($member['image'], ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($member['role'], ENT_QUOTES); ?>" class="h-56 w-full object-cover">
+                    <img src="<?php echo htmlspecialchars($member['image'], ENT_QUOTES); ?>" alt="<?php echo htmlspecialchars($member['name'], ENT_QUOTES); ?>" class="h-56 w-full object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-ink"><?php echo htmlspecialchars($member['role'], ENT_QUOTES); ?></h3>
+                                                <h3 class="text-xl font-bold text-brand-ink"><?php echo htmlspecialchars($member['name'], ENT_QUOTES); ?></h3>
+                        <p class="text-sm font-semibold text-brand-muted"><?php echo htmlspecialchars($member['role'], ENT_QUOTES); ?></p>
                         <p class="mt-2 text-sm font-semibold text-brand-blue"><?php echo htmlspecialchars($member['focus'], ENT_QUOTES); ?></p>
                         <p class="mt-4 text-sm leading-7 text-brand-muted"><?php echo htmlspecialchars($member['summary'], ENT_QUOTES); ?></p>
                     </div>
@@ -136,43 +138,4 @@ $team = [
     </div>
 </section>
 
-<section class="bg-brand-surface py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
-            <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Parent trust</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">We are built to reduce decision stress.</h2>
-                <p class="mt-4 text-base leading-8 text-brand-muted">Instead of vague promises, we show you the age band, the bootcamp length, the learning outcome, and the registration path. That keeps the process simple for busy parents and helps children enter a learning environment that fits them.</p>
-            </div>
-            <div class="rounded-3xl border border-slate-200 bg-brand-blue p-8 text-white shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/65">Trust signals</p>
-                <ul class="mt-6 space-y-4 text-sm leading-7 text-white/85">
-                    <li>Partner school collaborations</li>
-                    <li>Visible cohort structure and support</li>
-                    <li>Parent-focused communication</li>
-                    <li>Age-appropriate bootcamp design</li>
-                </ul>
-                <a href="<?php echo $baseUrl; ?>/register" class="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-brand-blue">Register Now</a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="bg-white py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-3">
-            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-7 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Parents</p>
-                <p class="mt-3 text-base leading-8 text-brand-muted">See what your child will learn and why it matters before you commit.</p>
-            </div>
-            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-7 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Children</p>
-                <p class="mt-3 text-base leading-8 text-brand-muted">Enjoy hands-on, practical learning in a supportive environment.</p>
-            </div>
-            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-7 shadow-soft">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-amber">Schools</p>
-                <p class="mt-3 text-base leading-8 text-brand-muted">Partner with a team that values structure, safety, and communication.</p>
-            </div>
-        </div>
-    </div>
-</section>
