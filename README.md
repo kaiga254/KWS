@@ -1,6 +1,6 @@
-# Kids With Solution Foundation
+# Kids With Solutions Foundation, Ltd.
 
-Kids With Solution Foundation is a PHP-based website for a children's digital literacy nonprofit. It presents the foundation's mission, programs, impact, testimonials, contact details, and a child registration form backed by MySQL.
+Kids With Solutions Foundation, Ltd. is a PHP-based website for a Kenyan social enterprise that equips young people with practical digital, financial, and innovation skills. It presents the foundation's mission, program areas, impact priorities, support options, contact placeholders, and a learner-interest form backed by MySQL.
 
 ## Project Overview
 
@@ -8,12 +8,12 @@ This project is built with a lightweight custom PHP MVC structure and Tailwind C
 
 ### Main Sections
 
-- Home page with hero content, programs, impact stats, testimonials, partners, and calls to action
+- Home page with hero content, program areas, impact priorities, and audience-specific calls to action
 - About page with mission, vision, values, and founders
 - Programs page with bootcamp details
 - Contact page with contact information and message form
-- Donate page with donation-focused hero and supporting content
-- Register page with a child registration form that stores submissions in the database
+- Support page with donor- and partner-focused content
+- Register page with a learner-interest form that stores submissions in the database
 
 ## Features
 
@@ -57,7 +57,7 @@ img/            Source image assets
 
 If you are using XAMPP on macOS, the project should be inside:
 
-`/Applications/XAMPP/xamppfiles/htdocs/KidsWithSolutions-master`
+`/Applications/XAMPP/xamppfiles/htdocs/KWSF`
 
 ### 2. Start Apache and MySQL
 
@@ -71,15 +71,15 @@ Create a MySQL database named:
 
 ### 4. Create the required table
 
-The registration form writes to a table named `provider`.
+The registration form writes to a table named `registrations`.
 
 Example schema:
 
 ```sql
-CREATE TABLE provider (
+CREATE TABLE registrations (
 		id INT AUTO_INCREMENT PRIMARY KEY,
-		firstname VARCHAR(100) NOT NULL,
-		lastname VARCHAR(100) NOT NULL,
+		first_name VARCHAR(100) NOT NULL,
+		last_name VARCHAR(100) NOT NULL,
 		email VARCHAR(150) NOT NULL,
 		phone_number VARCHAR(30) NOT NULL,
 		module VARCHAR(150) NOT NULL,
@@ -99,7 +99,7 @@ Edit `config.php` and update the MySQL settings for your local environment.
 
 If the project is hosted in the XAMPP htdocs folder, open:
 
-`http://localhost/KidsWithSolutions-master/public/home`
+`http://localhost/KWSF/public/home`
 
 ## Available Routes
 

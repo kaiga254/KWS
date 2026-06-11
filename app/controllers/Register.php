@@ -6,6 +6,7 @@ class Register extends Controller {
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             require_once '../config.php';
+            global $conn;
             $old = $_POST;
 
             $validation = $this->validateRegistration($_POST);
@@ -41,20 +42,49 @@ class Register extends Controller {
     }
 
     private function validateRegistration($post) {
-        $required = ['first_name', 'last_name', 'email', 'phone_number', 'child_first_name', 'child_last_name', 'child_age'];
+        $required = ['first_name', 'last_name', 'email', 'phone_number', 'child_first_name', 'child_last_name', 'child_age', 'child_gender', 'module'];
         foreach ($required as $field) {
             if (!isset($post[$field]) || trim((string) $post[$field]) === '') {
-                return 'Please fill the required fields.';
+                return 'Please fill all the required fields.';
             }
+        }
+
+        $namePattern = "/^[a-zA-Z\s\-\']{2,50}$/";
+        if (!preg_match($namePattern, trim((string) $post['first_name']))) {
+            return 'First name must be between 2 and 50 characters and contain only letters.';
+        }
+        if (!preg_match($namePattern, trim((string) $post['last_name']))) {
+            return 'Last name must be between 2 and 50 characters and contain only letters.';
+        }
+        if (!preg_match($namePattern, trim((string) $post['child_first_name']))) {
+            return 'Learner first name must be between 2 and 50 characters and contain only letters.';
+        }
+        if (!preg_match($namePattern, trim((string) $post['child_last_name']))) {
+            return 'Learner last name must be between 2 and 50 characters and contain only letters.';
         }
 
         if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
             return 'Please provide a valid email address.';
         }
 
+        $phonePattern = "/^\+?[0-9\s\-()]{9,15}$/";
+        if (!preg_match($phonePattern, trim((string) $post['phone_number']))) {
+            return 'Please provide a valid phone number (9 to 15 digits).';
+        }
+
         $childAge = filter_var($post['child_age'], FILTER_VALIDATE_INT);
-        if ($childAge === false || $childAge < 6 || $childAge > 17) {
-            return 'Please enter a child age between 6 and 17.';
+        if ($childAge === false || $childAge < 3 || $childAge > 20) {
+            return 'Learner age must be a number between 3 and 20.';
+        }
+
+        $validGenders = ['Male', 'Female'];
+        if (!in_array($post['child_gender'], $validGenders, true)) {
+            return 'Please select a valid learner gender.';
+        }
+
+        $validModules = ['Digital Literacy', 'Coding & Robotics', 'Financial Literacy', 'Leadership & Innovation', 'Not sure yet'];
+        if (!in_array($post['module'], $validModules, true)) {
+            return 'Please select a valid program area.';
         }
 
         return true;

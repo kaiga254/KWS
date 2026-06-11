@@ -1,0 +1,203 @@
+/* ==========================================================================
+   KWSF Innovation Cycle & Teaching Approach Section Styles
+   Used in: Home Page (home/index.php) and Programs Page (programs/index.php)
+   ========================================================================== */
+
+/* Base card transitions and identity transforms for stacking stability */
+.step-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(1) translateY(0);
+    will-change: transform, box-shadow, border-color;
+}
+
+.timeline-dot {
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(1);
+}
+
+/* Hover Glow effects per step type */
+.step-card-discover:hover {
+    border-color: rgba(31, 78, 121, 0.4);
+    box-shadow: 0 20px 40px rgba(31, 78, 121, 0.08), 0 1px 3px rgba(31, 78, 121, 0.04);
+    transform: scale(1.02) translateY(-4px);
+}
+.step-card-discover:hover .timeline-dot {
+    background-color: #1f4e79;
+    border-color: #f0f9ff;
+    transform: scale(1.3);
+}
+
+.step-card-imagine:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.08), 0 1px 3px rgba(139, 92, 246, 0.04);
+    transform: scale(1.02) translateY(-4px);
+}
+.step-card-imagine:hover .timeline-dot {
+    background-color: #8b5cf6;
+    border-color: #f5f3ff;
+    transform: scale(1.3);
+}
+
+.step-card-create:hover {
+    border-color: rgba(47, 133, 90, 0.4);
+    box-shadow: 0 20px 40px rgba(47, 133, 90, 0.08), 0 1px 3px rgba(47, 133, 90, 0.04);
+    transform: scale(1.02) translateY(-4px);
+}
+.step-card-create:hover .timeline-dot {
+    background-color: #2f855a;
+    border-color: #f0fdf4;
+    transform: scale(1.3);
+}
+
+.step-card-evolve:hover {
+    border-color: rgba(217, 119, 6, 0.4);
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.08), 0 1px 3px rgba(217, 119, 6, 0.04);
+    transform: scale(1.02) translateY(-4px);
+}
+.step-card-evolve:hover .timeline-dot {
+    background-color: #d97706;
+    border-color: #fffbeb;
+    transform: scale(1.3);
+}
+
+/* Custom utility classes to force hover styles via Javascript */
+.js-active-discover {
+    border-color: rgba(31, 78, 121, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(31, 78, 121, 0.08) !important;
+    transform: scale(1.02) translateY(-4px) !important;
+}
+.js-active-discover .timeline-dot {
+    background-color: #1f4e79 !important;
+    border-color: #f0f9ff !important;
+    transform: scale(1.3) !important;
+}
+
+.js-active-imagine {
+    border-color: rgba(139, 92, 246, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.08) !important;
+    transform: scale(1.02) translateY(-4px) !important;
+}
+.js-active-imagine .timeline-dot {
+    background-color: #8b5cf6 !important;
+    border-color: #f5f3ff !important;
+    transform: scale(1.3) !important;
+}
+
+.js-active-create {
+    border-color: rgba(47, 133, 90, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(47, 133, 90, 0.08) !important;
+    transform: scale(1.02) translateY(-4px) !important;
+}
+.js-active-create .timeline-dot {
+    background-color: #2f855a !important;
+    border-color: #f0fdf4 !important;
+    transform: scale(1.3) !important;
+}
+
+.js-active-evolve {
+    border-color: rgba(217, 119, 6, 0.4) !important;
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.08) !important;
+    transform: scale(1.02) translateY(-4px) !important;
+}
+.js-active-evolve .timeline-dot {
+    background-color: #d97706 !important;
+    border-color: #fffbeb !important;
+    transform: scale(1.3) !important;
+}
+
+/* SVG node styles */
+.cycle-node {
+    transition: fill 0.3s, stroke 0.3s, stroke-width 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+    cursor: pointer;
+}
+.cycle-node circle {
+    transition: fill 0.3s, stroke 0.3s, stroke-width 0.3s;
+}
+.cycle-node text {
+    transition: fill 0.3s, font-weight 0.3s;
+}
+.cycle-path {
+    transition: stroke 0.4s, stroke-width 0.4s, stroke-dasharray 0.4s;
+}
+
+/* Active styling pushed via JS */
+.node-active-discover circle {
+    fill: #f0f9ff !important;
+    stroke: #1f4e79 !important;
+    stroke-width: 3px !important;
+}
+.node-active-discover text {
+    fill: #1f4e79 !important;
+    font-weight: bold;
+}
+.node-active-discover {
+    transform: scale(1.15);
+}
+
+.node-active-imagine circle {
+    fill: #f5f3ff !important;
+    stroke: #8b5cf6 !important;
+    stroke-width: 3px !important;
+}
+.node-active-imagine text {
+    fill: #8b5cf6 !important;
+    font-weight: bold;
+}
+.node-active-imagine {
+    transform: scale(1.15);
+}
+
+.node-active-create circle {
+    fill: #f0fdf4 !important;
+    stroke: #2f855a !important;
+    stroke-width: 3px !important;
+}
+.node-active-create text {
+    fill: #2f855a !important;
+    font-weight: bold;
+}
+.node-active-create {
+    transform: scale(1.15);
+}
+
+.node-active-evolve circle {
+    fill: #fffbeb !important;
+    stroke: #d97706 !important;
+    stroke-width: 3px !important;
+}
+.node-active-evolve text {
+    fill: #d97706 !important;
+    font-weight: bold;
+}
+.node-active-evolve {
+    transform: scale(1.15);
+}
+
+/* Path highlighting */
+.path-active-discover {
+    stroke: #1f4e79 !important;
+    stroke-width: 3px !important;
+    stroke-dasharray: none !important;
+    marker-end: url(#arrow-discover) !important;
+}
+.path-active-imagine {
+    stroke: #8b5cf6 !important;
+    stroke-width: 3px !important;
+    stroke-dasharray: none !important;
+    marker-end: url(#arrow-imagine) !important;
+}
+.path-active-create {
+    stroke: #2f855a !important;
+    stroke-width: 3px !important;
+    stroke-dasharray: none !important;
+    marker-end: url(#arrow-create) !important;
+}
+.path-active-evolve {
+    stroke: #d97706 !important;
+    stroke-width: 3px !important;
+    stroke-dasharray: none !important;
+    marker-end: url(#arrow-evolve) !important;
+}
