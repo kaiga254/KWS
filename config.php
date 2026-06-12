@@ -27,13 +27,13 @@ if ($conn === false || $conn === null) {
 }
 
 /* Mail configuration for Contact/Registration forms */
-define('MAIL_TO_EMAIL', 'emmanuelkaiga32@gmail.com');
-define('MAIL_FROM_EMAIL', 'customersupport@kwsf.com');
+define('MAIL_TO_EMAIL', 'customersupport@kwsf.info');// KWSF contact email for receiving form submissions
+define('MAIL_FROM_EMAIL', 'customersupport@kwsf.info');
 define('MAIL_FROM_NAME', 'Kids With Solutions Foundation');
 
 /* SMTP Configuration (Optional but recommended for cPanel/production hosting) */
 define('SMTP_HOST', 'mail.kwsf.info');      // e.g. 'mail.kwsf.com' or 'smtp.gmail.com'
 define('SMTP_PORT', 465);     // 465 (SSL) or 587 (TLS)
-define('SMTP_USERNAME', 'customersupport@kwsf.com');  // e.g. 'customersupport@kwsf.com'
+define('SMTP_USERNAME', 'customersupport@kwsf.info');  // e.g. 'customersupport@kwsf.com'
 define('SMTP_PASSWORD', '%3Vh!0XJ[_iV6+22');  // your email account password
 define('SMTP_SECURE', 'ssl'); // 'ssl' or 'tls' or ''

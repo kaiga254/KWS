@@ -36,7 +36,7 @@ $selected = function (string $key, string $choice) use ($old): string {
                         <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     </div>
                     <h2 class="mt-5 text-3xl font-extrabold text-brand-ink">Interest submitted</h2>
-                    <p class="mt-3 text-base leading-8 text-brand-muted">Thank you. The KWSF team should review your submission and contact you with the relevant next steps.</p>
+                    <p class="mt-3 text-base leading-8 text-brand-muted">Thank you. The KWSF team will review your submission and contact you with the relevant next steps.</p>
                     <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                         <a href="<?php echo $baseUrl; ?>/home" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-brand-ink">Back to Home</a>
                         <a href="<?php echo $baseUrl; ?>/programs" class="inline-flex items-center justify-center rounded-full bg-brand-green px-6 py-3 text-sm font-bold text-white">View Programs</a>
