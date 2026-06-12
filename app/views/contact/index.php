@@ -9,9 +9,21 @@ $selected = function (string $key, string $choice) use ($old): string {
 };
 
 $contactCards = [
-    ['label' => 'Email', 'value' => 'KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com'],
-    ['label' => 'Phone', 'value' => '+254 780 941 397'],
-    ['label' => 'WhatsApp', 'value' => '+254 780 941 397'],
+    [
+        'label' => 'Email',
+        'value' => 'KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com',
+        'href' => 'mailto:KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com'
+    ],
+    [
+        'label' => 'Phone',
+        'value' => '+254 780 941 397',
+        'href' => 'tel:+254780941397'
+    ],
+    [
+        'label' => 'WhatsApp',
+        'value' => '+254 780 941 397',
+        'href' => 'https://wa.me/254780941397'
+    ],
 ];
 ?>
 
@@ -24,9 +36,9 @@ $contactCards = [
     </div>
 
     <div class="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
-        <div class="w-full rounded-[2rem] border border-slate-200/60 bg-white/90 p-8 backdrop-blur-md shadow-soft lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
+        <div class="w-full rounded-3xl border border-slate-200/60 bg-white/95 p-6 backdrop-blur-md shadow-soft sm:p-8 lg:rounded-[2rem] lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Contact KWSF</p>
-            <h1 class="mt-4 text-4xl font-extrabold leading-tight text-brand-ink sm:text-5xl">Start a conversation about learning, support, or partnership.</h1>
+            <h1 class="mt-4 text-3xl font-extrabold leading-tight text-brand-ink sm:text-4xl lg:text-5xl">Start a conversation about learning, support, or partnership.</h1>
             <p class="mt-6 max-w-2xl text-lg leading-8 text-brand-muted">Whether you are a parent, donor, school, company, institute, or community organization, we're excited to hear from you and help you plan the next step.</p>
             <div class="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a href="<?php echo $baseUrl; ?>/register" class="inline-flex items-center justify-center rounded-full bg-brand-green px-7 py-4 text-base font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5">Enroll a Learner</a>
@@ -42,21 +54,21 @@ $contactCards = [
         <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
                 <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-green">Our contact details</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">Publish the right contact information</h2>
+                <h2 class="mt-3 text-2xl font-extrabold text-brand-ink sm:text-3xl">Publish the right contact information</h2>
                 <p class="mt-4 text-base leading-8 text-brand-muted">The supplied documents do not include public contact details. Replace the placeholders below with KWSF-approved information before launch.</p>
-                <div class="mt-8 space-y-5">
+                <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                     <?php foreach ($contactCards as $card): ?>
-                        <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5 shadow-soft">
+                        <div class="rounded-2xl border border-slate-200 bg-brand-surface p-5 shadow-soft <?php echo $card['label'] === 'Email' ? 'sm:col-span-2 lg:col-span-1' : ''; ?>">
                             <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-muted"><?php echo htmlspecialchars($card['label'], ENT_QUOTES); ?></p>
-                            <p class="mt-2 text-lg font-semibold text-brand-ink"><?php echo htmlspecialchars($card['value'], ENT_QUOTES); ?></p>
+                            <a href="<?php echo htmlspecialchars($card['href'], ENT_QUOTES); ?>" class="mt-2 block text-lg font-semibold text-brand-ink hover:text-brand-blue transition-colors break-all"><?php echo htmlspecialchars($card['value'], ENT_QUOTES); ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
 
-            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-8 shadow-soft">
+            <div class="rounded-3xl border border-slate-200 bg-brand-surface p-6 sm:p-8 shadow-soft">
                 <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-blue">Enquiry form</p>
-                <h2 class="mt-3 text-3xl font-extrabold text-brand-ink">Send us a message</h2>
+                <h2 class="mt-3 text-2xl font-extrabold text-brand-ink sm:text-3xl">Send us a message</h2>
                 <p class="mt-4 text-base leading-8 text-brand-muted">Tell us what you need and we will respond with the most relevant next step.</p>
 
                 <?php if ($message === 'success'): ?>
@@ -82,8 +94,8 @@ $contactCards = [
                             <div>
                                 <label for="contact_name" class="block text-sm font-semibold text-slate-700">Name *</label>
                                 <input type="text" id="contact_name" name="contact_name" value="<?php echo $value('contact_name'); ?>" required pattern="^[a-zA-Z\s\-\']{2,100}$" aria-describedby="contact_name-error" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15">
-                                <div id="contact_name-error" class="error-msg hidden items-center gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
-                                    <svg class="h-4 w-4 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div id="contact_name-error" class="error-msg hidden items-start gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
+                                    <svg class="h-4 w-4 text-rose-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                                     </svg>
                                     Name must be 2-100 characters (letters, spaces, hyphens, or apostrophes only).
@@ -92,8 +104,8 @@ $contactCards = [
                             <div>
                                 <label for="contact_email" class="block text-sm font-semibold text-slate-700">Email address *</label>
                                 <input type="email" id="contact_email" name="contact_email" value="<?php echo $value('contact_email'); ?>" required aria-describedby="contact_email-error" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15">
-                                <div id="contact_email-error" class="error-msg hidden items-center gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
-                                    <svg class="h-4 w-4 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div id="contact_email-error" class="error-msg hidden items-start gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
+                                    <svg class="h-4 w-4 text-rose-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                                     </svg>
                                     Please enter a valid email address.
@@ -110,8 +122,8 @@ $contactCards = [
                                 <option value="Equipment or volunteer support" <?php echo $selected('contact_subject', 'Equipment or volunteer support'); ?>>Equipment or volunteer support</option>
                                 <option value="General enquiry" <?php echo $selected('contact_subject', 'General enquiry'); ?>>General enquiry</option>
                             </select>
-                            <div id="contact_subject-error" class="error-msg hidden items-center gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
-                                <svg class="h-4 w-4 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div id="contact_subject-error" class="error-msg hidden items-start gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
+                                <svg class="h-4 w-4 text-rose-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                                 </svg>
                                 Please select a topic to discuss.
@@ -120,8 +132,8 @@ $contactCards = [
                         <div>
                             <label for="contact_message" class="block text-sm font-semibold text-slate-700">Message *</label>
                             <textarea id="contact_message" name="contact_message" rows="5" required minlength="10" maxlength="2000" aria-describedby="contact_message-error" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15"><?php echo $value('contact_message'); ?></textarea>
-                            <div id="contact_message-error" class="error-msg hidden items-center gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
-                                <svg class="h-4 w-4 text-rose-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div id="contact_message-error" class="error-msg hidden items-start gap-1.5 mt-1.5 text-xs font-semibold text-rose-600" aria-live="polite">
+                                <svg class="h-4 w-4 text-rose-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                                 </svg>
                                 Message must be between 10 and 2000 characters.
@@ -139,7 +151,7 @@ $contactCards = [
     <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:px-8">
         <div class="max-w-3xl">
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-white/60">Partnerships matter</p>
-            <h2 class="mt-3 text-3xl font-extrabold">Help expand access to IT skills and learning tools.</h2>
+            <h2 class="mt-3 text-2xl font-extrabold sm:text-3xl">Help expand access to IT skills and learning tools.</h2>
         </div>
         <a href="<?php echo $baseUrl; ?>/donate" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-brand-blue">Explore Ways to Support</a>
     </div>

@@ -164,8 +164,8 @@ $navItems = [
                     <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-white/55">Contact</h3>
                     <!-- TODO: Replace these placeholders with verified KWSF contact details before launch. -->
                     <div class="mt-5 space-y-3 text-sm text-white/75">
-                        <p>Email: KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com</p>
-                        <p>Phone: +254 780 941 397</p>
+                        <p class="break-all">Email: <a href="mailto:KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com" class="hover:text-brand-green transition-colors">KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+254780941397" class="hover:text-brand-green transition-colors">+254 780 941 397</a></p>
                         <p>Location: USIU Road off Thika Road(Exit 7)</p>
                     </div>
                     <a href="<?php echo $baseUrl; ?>/contact" class="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-bold text-brand-blue">Contact KWSF</a>
