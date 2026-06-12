@@ -14,21 +14,169 @@ class Mailer {
             return false;
         }
 
+        // If SMTP configuration is defined and host is set, try sending via SMTP
+        if (defined('SMTP_HOST') && !empty(SMTP_HOST)) {
+            return self::sendSmtp($to, $subject, $htmlContent, $replyToEmail);
+        }
+
+        // Fallback to standard php mail() if it exists
+        if (function_exists('mail')) {
+            $headers = [
+                'MIME-Version: 1.0',
+                'Content-Type: text/html; charset=UTF-8',
+                'From: ' . MAIL_FROM_NAME . ' <' . MAIL_FROM_EMAIL . '>',
+                'Reply-To: ' . $replyToEmail,
+                'X-Mailer: PHP/' . phpversion()
+            ];
+            
+            $headersString = implode("\r\n", $headers);
+            
+            // Use standard envelope sender -f flag to match MAIL_FROM_EMAIL
+            // This is critical for cPanel SPF, DKIM, and DMARC alignment.
+            $additionalParams = '-f' . MAIL_FROM_EMAIL;
+            
+            return @mail($to, $subject, $htmlContent, $headersString, $additionalParams);
+        }
+
+        // If neither SMTP is configured nor mail() is available, log and return false
+        error_log("Mailer Error: The PHP mail() function is disabled on this server, and SMTP is not configured. Please configure SMTP in config.php.");
+        return false;
+    }
+
+    /**
+     * Send email via SMTP using socket connection.
+     * This is self-contained and does not require external libraries.
+     */
+    private static function sendSmtp($to, $subject, $htmlContent, $replyToEmail) {
+        $host = defined('SMTP_HOST') ? SMTP_HOST : '';
+        $port = defined('SMTP_PORT') ? SMTP_PORT : 25;
+        $username = defined('SMTP_USERNAME') ? SMTP_USERNAME : '';
+        $password = defined('SMTP_PASSWORD') ? SMTP_PASSWORD : '';
+        $secure = defined('SMTP_SECURE') ? SMTP_SECURE : '';
+
+        if (empty($host) || empty($username) || empty($password)) {
+            error_log("SMTP Error: Host, username, or password is not configured.");
+            return false;
+        }
+
+        $socketHost = ($secure === 'ssl') ? 'ssl://' . $host : $host;
+        $socket = @fsockopen($socketHost, $port, $errno, $errstr, 15);
+        if (!$socket) {
+            error_log("SMTP Connection Error: $errstr ($errno) - Host: $socketHost Port: $port");
+            return false;
+        }
+
+        $getResponse = function($socket) {
+            $response = '';
+            while (($str = fgets($socket, 515)) !== false) {
+                $response .= $str;
+                if (substr($str, 3, 1) === ' ') {
+                    break;
+                }
+            }
+            return $response;
+        };
+
+        $sendCommand = function($socket, $cmd) use ($getResponse) {
+            fwrite($socket, $cmd . "\r\n");
+            return $getResponse($socket);
+        };
+
+        // Read initial greeting
+        $getResponse($socket);
+
+        // EHLO
+        $heloHost = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : 'localhost';
+        $sendCommand($socket, "EHLO " . $heloHost);
+
+        // STARTTLS if TLS is requested
+        if ($secure === 'tls') {
+            $res = $sendCommand($socket, "STARTTLS");
+            if (strpos($res, '220') === false) {
+                error_log("SMTP TLS Error: STARTTLS command rejected.");
+                fclose($socket);
+                return false;
+            }
+            // Enable crypto
+            $cryptoMethod = STREAM_CRYPTO_METHOD_TLS_CLIENT;
+            if (defined('STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT')) {
+                $cryptoMethod = STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
+            }
+            if (!stream_socket_enable_crypto($socket, true, $cryptoMethod)) {
+                error_log("SMTP TLS Error: Failed to enable encryption.");
+                fclose($socket);
+                return false;
+            }
+            // Resend EHLO
+            $sendCommand($socket, "EHLO " . $heloHost);
+        }
+
+        // AUTH LOGIN
+        $res = $sendCommand($socket, "AUTH LOGIN");
+        if (strpos($res, '334') === false) {
+            error_log("SMTP Auth Error: AUTH LOGIN rejected. Response: " . trim($res));
+            fclose($socket);
+            return false;
+        }
+
+        $res = $sendCommand($socket, base64_encode($username));
+        if (strpos($res, '334') === false) {
+            error_log("SMTP Auth Error: Username rejected. Response: " . trim($res));
+            fclose($socket);
+            return false;
+        }
+
+        $res = $sendCommand($socket, base64_encode($password));
+        if (strpos($res, '235') === false) {
+            error_log("SMTP Auth Error: Password rejected. Response: " . trim($res));
+            fclose($socket);
+            return false;
+        }
+
+        // MAIL FROM
+        $from = MAIL_FROM_EMAIL;
+        $sendCommand($socket, "MAIL FROM:<" . $from . ">");
+
+        // RCPT TO
+        $sendCommand($socket, "RCPT TO:<" . $to . ">");
+
+        // DATA
+        $res = $sendCommand($socket, "DATA");
+        if (strpos($res, '354') === false) {
+            error_log("SMTP Data Error: DATA command rejected. Response: " . trim($res));
+            fclose($socket);
+            return false;
+        }
+
+        // Construct Headers
         $headers = [
             'MIME-Version: 1.0',
             'Content-Type: text/html; charset=UTF-8',
             'From: ' . MAIL_FROM_NAME . ' <' . MAIL_FROM_EMAIL . '>',
-            'Reply-To: ' . $replyToEmail,
+            'To: <' . $to . '>',
+            'Subject: ' . $subject,
+            'Reply-To: <' . $replyToEmail . '>',
+            'Date: ' . date('r'),
+            'Message-ID: <' . md5(uniqid(microtime(), true)) . '@' . $heloHost . '>',
             'X-Mailer: PHP/' . phpversion()
         ];
+
+        // Format data: ensure SMTP compliance (escape double dots at start of lines)
+        $body = str_replace("\n.", "\n..", $htmlContent);
         
-        $headersString = implode("\r\n", $headers);
+        $emailData = implode("\r\n", $headers) . "\r\n\r\n" . $body . "\r\n.";
+        $res = $sendCommand($socket, $emailData);
         
-        // Use standard envelope sender -f flag to match MAIL_FROM_EMAIL
-        // This is critical for cPanel SPF, DKIM, and DMARC alignment.
-        $additionalParams = '-f' . MAIL_FROM_EMAIL;
-        
-        return @mail($to, $subject, $htmlContent, $headersString, $additionalParams);
+        // QUIT
+        $sendCommand($socket, "QUIT");
+        fclose($socket);
+
+        if (strpos($res, '250') === false) {
+            error_log("SMTP Delivery Error: Message rejected. Response: " . trim($res));
+            return false;
+        }
+
+        return true;
     }
 
     /**
