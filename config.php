@@ -9,7 +9,13 @@ define('DB_PORT', 3308);
  
 /* Attempt to connect to MySQL database */
 try {
+    // Try connecting with custom port first (e.g. XAMPP custom port 3308)
     $conn = @mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
+    
+    // If that fails, attempt connection using standard system port/socket (e.g. 3306 on cPanel)
+    if ($conn === false || $conn === null) {
+        $conn = @mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    }
 } catch (Exception $e) {
     $conn = null;
 }
@@ -19,10 +25,8 @@ if ($conn === false || $conn === null) {
     // Optionally log or handle gracefully without throwing a 500 error for all pages
     $conn = null;
 }
-// Secret key for encrypting Google Sheets payloads (optional)
-$secret = 'k9X@2pL!7qR#8mZ$4vT^1bN&6cD*9sW';
 
-/* Google Sheets integration (optional) */
-define('GOOGLE_SHEETS_WEBHOOK_URL', 'https://script.google.com/macros/s/AKfycbzx5VeNB2QZ9-tUHkrniTzeD9lyVz2teuDzhORuYANa_I6rjB1G76EYFo2f6hLPFdHq2Q/exec');
-define('GOOGLE_SHEETS_SHARED_SECRET', $secret);
-define('GOOGLE_SHEETS_TIMEOUT', 10);
+/* Mail configuration for Contact/Registration forms */
+define('MAIL_TO_EMAIL', 'KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com');
+define('MAIL_FROM_EMAIL', 'info@kwsf.com');
+define('MAIL_FROM_NAME', 'Kids With Solutions Foundation');

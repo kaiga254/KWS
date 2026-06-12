@@ -17,7 +17,6 @@ class Register extends Controller {
                 $errors = [];
 
                 $mysqlSuccess = false;
-                $googleSuccess = false;
 
                 if ($conn instanceof mysqli) {
                     $mysqlSuccess = $this->saveToDB($conn, $data, $errors);
@@ -25,12 +24,13 @@ class Register extends Controller {
                     $errors[] = 'Local backup storage is unavailable.';
                 }
 
-                if (!empty(GOOGLE_SHEETS_WEBHOOK_URL)) {
-                    $googleSuccess = $this->syncToGoogleSheets($data, $errors);
+                $emailSuccess = Mailer::sendRegistrationEmail($data);
+                if (!$emailSuccess) {
+                    $errors[] = 'Failed to send email notification.';
                 }
 
-                // Success if either MySQL backup or Google sync succeeds.
-                if ($mysqlSuccess || $googleSuccess) {
+                // Success if either MySQL backup or Email succeeds.
+                if ($mysqlSuccess || $emailSuccess) {
                     $message = 'success';
                 } else {
                     $message = 'Error: ' . implode(' ', $errors);
@@ -106,6 +106,26 @@ class Register extends Controller {
     }
 
     private function saveToDB($conn, $data, &$errors) {
+          // First ensure table exists
+        $createTableSql = 'CREATE TABLE IF NOT EXISTS registrations (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            first_name VARCHAR(50) NOT NULL,
+            last_name VARCHAR(50) NOT NULL,
+            email VARCHAR(150) NOT NULL,
+            phone_number VARCHAR(20) NOT NULL,
+            module VARCHAR(100) NOT NULL,
+            child_first_name VARCHAR(50) NOT NULL,
+            child_last_name VARCHAR(50) NOT NULL,
+            child_age INT NOT NULL,
+            child_gender VARCHAR(15) NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )';
+
+        if (!$conn->query($createTableSql)) {
+            $errors[] = 'Failed to initialize database table.';
+            return false;
+        }
+
         $sql = 'INSERT INTO registrations (first_name, last_name, email, phone_number, module, child_first_name, child_last_name, child_age, child_gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $stmt = $conn->prepare($sql);
 
@@ -134,45 +154,5 @@ class Register extends Controller {
 
         $stmt->close();
         return $ok;
-    }
-
-    private function syncToGoogleSheets($data, &$errors) {
-        $payload = $data;
-        if (GOOGLE_SHEETS_SHARED_SECRET !== '') {
-            $payload['shared_secret'] = GOOGLE_SHEETS_SHARED_SECRET;
-        }
-
-        $json = json_encode($payload);
-        if ($json === false) {
-            $errors[] = 'Google Sheets sync failed.';
-            return false;
-        }
-
-        $ch = curl_init(GOOGLE_SHEETS_WEBHOOK_URL);
-        if ($ch === false) {
-            $errors[] = 'Google Sheets sync failed.';
-            return false;
-        }
-
-        curl_setopt_array($ch, [
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $json,
-            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => GOOGLE_SHEETS_TIMEOUT,
-            CURLOPT_CONNECTTIMEOUT => GOOGLE_SHEETS_TIMEOUT
-        ]);
-
-        $response = curl_exec($ch);
-        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $curlError = curl_error($ch);
-        curl_close($ch);
-
-        if ($response === false || $curlError !== '' || $httpCode < 200 || $httpCode >= 300) {
-            $errors[] = 'Google Sheets sync failed.';
-            return false;
-        }
-
-        return true;
     }
 }

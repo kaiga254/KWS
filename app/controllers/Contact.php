@@ -23,7 +23,12 @@ class Contact extends Controller {
                     $errors[] = 'Local backup storage is unavailable.';
                 }
 
-                if ($mysqlSuccess) {
+                $emailSuccess = Mailer::sendEnquiryEmail($data);
+                if (!$emailSuccess) {
+                    $errors[] = 'Failed to send email notification.';
+                }
+
+                if ($mysqlSuccess || $emailSuccess) {
                     $message = 'success';
                     $old = []; // Clear input values on success
                 } else {
