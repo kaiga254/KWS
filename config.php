@@ -27,6 +27,6 @@ if ($conn === false || $conn === null) {
 }
 
 /* Mail configuration for Contact/Registration forms */
-define('MAIL_TO_EMAIL', 'KIDSWITHSOLUTIONSFOUNDATIONLTD@gmail.com');
-define('MAIL_FROM_EMAIL', 'info@kwsf.com');
+define('MAIL_TO_EMAIL', 'emmanuelkaiga32@gmail.com');
+define('MAIL_FROM_EMAIL', 'customersupport@kwsf.com');
 define('MAIL_FROM_NAME', 'Kids With Solutions Foundation');
