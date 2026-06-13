@@ -1,10 +1,17 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', '127.0.0.1');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'register');
+// For local development with XAMPP, you might use:
+// define('DB_SERVER', '127.0.0.1');
+// define('DB_USERNAME', 'root');
+// define('DB_PASSWORD', '');
+// define('DB_NAME', 'register');
+// define('DB_PORT', 3308);
+ 
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'lqlfvxdo_kwsf_user');
+define('DB_PASSWORD', '@vh9cJmx387alq;W');
+define('DB_NAME', 'lqlfvxdo_kwsf_db');
 define('DB_PORT', 3308);
  
 /* Attempt to connect to MySQL database */
